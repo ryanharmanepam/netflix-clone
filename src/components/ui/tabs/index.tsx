@@ -1,4 +1,4 @@
-import React from "react";
+import { Tab } from "../tab";
 
 interface Tab {
   id: number;
@@ -16,8 +16,10 @@ export const Tabs = ({ tabs, onTabClick }: TabsProps) => {
   return (
     <div>
       {/* TODO: Styling for selected tab */}
-      {tabs.map((i) => (
-        <div onClick={() => onTabClick(i.id)}>{i.name}</div>
+      {tabs.map(({ id, name, isSelected }) => (
+        <Tab key={id} onClick={() => onTabClick(id)} isSelected={isSelected}>
+          {name}
+        </Tab>
       ))}
     </div>
   );

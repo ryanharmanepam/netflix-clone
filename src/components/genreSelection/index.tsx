@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Tabs } from "..";
+import { genreTabs } from "./mockTabs";
 
 export const GenreSelection = () => {
   const [tabs, setTabs] = useState(genreTabs);
@@ -13,11 +14,3 @@ export const GenreSelection = () => {
 
   return <Tabs tabs={tabs} onTabClick={onTabClick} />;
 };
-
-const genreTabs = [
-  { id: 0, name: "All", isSelected: true },
-  { id: 1, name: "Documentary", isSelected: false },
-  { id: 2, name: "Comedy", isSelected: false },
-  { id: 3, name: "Horror", isSelected: false },
-  { id: 4, name: "Crime", isSelected: false },
-];

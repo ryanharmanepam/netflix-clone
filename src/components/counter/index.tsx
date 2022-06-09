@@ -4,10 +4,18 @@ import { Button } from "..";
 export const Counter = () => {
   const [currentCount, setCurrentCount] = useState<number>(0);
 
+  const countPlusOne = () => {
+    setCurrentCount(currentCount + 1);
+  };
+
+  const countMinusOne = () => {
+    setCurrentCount(currentCount - 1);
+  };
+
   return (
     <div>
-      <Button onClick={() => setCurrentCount(currentCount + 1)}>Up!</Button>
-      <Button onClick={() => setCurrentCount(currentCount - 1)}>Down!</Button>
+      <Button onClick={countPlusOne}>Up!</Button>
+      <Button onClick={countMinusOne}>Down!</Button>
       {currentCount}
     </div>
   );

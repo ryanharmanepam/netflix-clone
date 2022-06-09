@@ -1,10 +1,12 @@
-import React from "react";
-
-interface ButtonProps {
+interface ButtonProps extends React.ComponentProps<"button"> {
   children: React.ReactNode;
   onClick: () => void;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
-  return <button onClick={onClick}>{children}</button>;
+export const Button = ({ children, onClick, ...rest }: ButtonProps) => {
+  return (
+    <button onClick={onClick} {...rest}>
+      {children}
+    </button>
+  );
 };
