@@ -1,4 +1,4 @@
-import { Tab } from "../tab";
+import { Tab as TabContainer } from "../tab";
 
 interface Tab {
   id: number;
@@ -17,9 +17,13 @@ export const Tabs = ({ tabs, onTabClick }: TabsProps) => {
     <div>
       {/* TODO: Styling for selected tab */}
       {tabs.map(({ id, name, isSelected }) => (
-        <Tab key={id} onClick={() => onTabClick(id)} isSelected={isSelected}>
+        <TabContainer
+          key={id}
+          onClick={() => onTabClick(id)}
+          isSelected={isSelected}
+        >
           {name}
-        </Tab>
+        </TabContainer>
       ))}
     </div>
   );
