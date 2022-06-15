@@ -6,8 +6,10 @@ export const GenreSelection = () => {
   const [tabs, setTabs] = useState(genreTabs);
 
   const onTabClick = (id: number) => {
-    const newTabs = tabs.map((i) =>
-      i.id === id ? { ...i, isSelected: true } : { ...i, isSelected: false }
+    const newTabs = tabs.map((tab) =>
+      tab.id === id
+        ? { ...tab, isSelected: true }
+        : { ...tab, isSelected: false }
     );
     setTabs(newTabs);
   };
