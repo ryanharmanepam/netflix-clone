@@ -1,6 +1,6 @@
 interface InputProps extends React.ComponentProps<"input"> {
-  label: string;
-  name: string;
+  label?: string;
+  name?: string;
 }
 
 export const Input = ({ label, name, ...rest }: InputProps) => {
@@ -8,7 +8,7 @@ export const Input = ({ label, name, ...rest }: InputProps) => {
     // TODO: Styling
     <div>
       <label htmlFor={name}>{label}</label>
-      <input id={name} {...rest}></input>
+      <input id={name} {...rest} />
     </div>
   );
 };
