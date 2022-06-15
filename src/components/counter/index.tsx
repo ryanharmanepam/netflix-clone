@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "..";
 
 export const Counter = () => {
   const [currentCount, setCurrentCount] = useState<number>(0);
 
-  const countPlusOne = () => {
+  const countPlusOne = useCallback(() => {
     setCurrentCount(currentCount + 1);
-  };
+  }, [setCurrentCount, currentCount]);
 
-  const countMinusOne = () => {
+  const countMinusOne = useCallback(() => {
     setCurrentCount(currentCount - 1);
-  };
+  }, [setCurrentCount, currentCount]);
 
   return (
     <div>
