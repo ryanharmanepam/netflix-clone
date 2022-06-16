@@ -5,12 +5,12 @@ export const Counter = () => {
   const [currentCount, setCurrentCount] = useState<number>(0);
 
   const countPlusOne = useCallback(() => {
-    setCurrentCount(currentCount + 1);
-  }, [setCurrentCount, currentCount]);
+    setCurrentCount((curr) => curr + 1);
+  }, [setCurrentCount]);
 
   const countMinusOne = useCallback(() => {
-    setCurrentCount(currentCount - 1);
-  }, [setCurrentCount, currentCount]);
+    setCurrentCount((curr) => curr - 1);
+  }, [setCurrentCount]);
 
   return (
     <div>
