@@ -58,5 +58,5 @@ const defaultConfig = {
 
 module.exports = () =>
   process.env.NODE_ENV === "development"
-    ? merge(defaultConfig, ...require("./webpack.config.dev"))
-    : merge(defaultConfig, ...require("./webpack.config.prod"));
+    ? merge(defaultConfig, require("./webpack.config.dev"))
+    : merge(defaultConfig, require("./webpack.config.prod"));
